@@ -6,7 +6,7 @@ import Task from './Task';
 function App(props) {
 	const [currentTime, setTime] = useState(new Date().toLocaleTimeString());
 
-	// setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+	setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
 
 	return (
 		<div>
