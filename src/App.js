@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ButtonAppBar from './AppBar';
+import Task from './Task';
+
+function App(props) {
+	const [currentTime, setTime] = useState(new Date().toLocaleTimeString());
+
+	setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+
+	return (
+		<div>
+			<ButtonAppBar />
+			<div id="clock">{currentTime}</div>
+			<Task />
+		</div>
+	);
 }
 
 export default App;
